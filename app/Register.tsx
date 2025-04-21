@@ -13,7 +13,7 @@ const Register = () => {
 
   const handleRegister = () => {
     // Navigate to the login screen after registration
-    router.replace('./LoginScreen');
+    router.replace('./');
   };
 
   return (
@@ -25,10 +25,13 @@ const Register = () => {
 
       {/* Form */}
       <View style={styles.formContainer}>
-        <Text style={styles.title}>Create an Account</Text>
-        <Text style={styles.subtitle}>Sign up to continue</Text>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>Sign Up</Text>
+          <Text style={styles.subtitle}>Create an account to  get started</Text>
 
-        <TextInput
+        </View>
+       <View style={styles.inputContainer}>
+       <TextInput
           style={styles.input}
           value={fullname}
           onChangeText={setFullname}
@@ -66,10 +69,12 @@ const Register = () => {
           secureTextEntry
           placeholderTextColor="#aaa"
         />
-
         <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
+       </View>
+
+        
       </View>
     </ScrollView>
   );
@@ -91,18 +96,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingBottom: 40,
   },
+  textContainer: {
+    position: 'absolute'
+  },
   title: {
     fontSize: 32,
-    fontWeight: 'bold',
+    fontWeight: '900',
     color: '#8C00BF',
-    textAlign: 'center',
-    marginBottom: 10,
+    marginTop: 20,
   },
   subtitle: {
     fontSize: 16,
-    textAlign: 'center',
     color: '#666',
-    marginBottom: 30,
+    marginTop: 5,
+  },
+  inputContainer:{
+    marginTop: 120,
+    position: 'absolute',
   },
   input: {
     backgroundColor: '#fff',

@@ -10,8 +10,7 @@ const Home = () => {
   const router = useRouter(); // Use the router for navigation
 
   const handleLogout = () => {
-    // Navigate to the login screen
-    router.replace("/LoginScreen");
+    router.replace("./");
   };
 
   const handleSOS = () => {
@@ -32,7 +31,9 @@ const Home = () => {
 
   return (
     <LinearGradient colors={["#ffffff", "#ffffff"]} style={styles.container}>
-      <View style={styles.userContainer}>
+      <View style={styles.topbar} />
+
+      <View style={styles.userButton}>
         <TouchableOpacity onPress={toggleDropdown} style={styles.userButton}>
           <Text style={styles.userText}>{username}</Text>
         </TouchableOpacity>
@@ -72,7 +73,7 @@ const Home = () => {
             <Text style={styles.actionText}>Track</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.actionButton} onPress={() => router.push("/Chat")}>
+          <TouchableOpacity style={styles.actionButton} onPress={() => router.push("/Chatlist")}>
             <View style={styles.iconContainer}>
               <MaterialIcons name="chat" size={17} color="white" />
             </View>
@@ -90,27 +91,34 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "space-between",
   },
-  userContainer: {
-    alignSelf: "flex-start",
+  topbar: {
+    position: "absolute",
+    top: -100,
+    left: 0,
+    right: 0,
+    height: 170,
     backgroundColor: "#b68def",
-    padding: 20,
-    borderRadius: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 3,
-    marginBottom: 20,
-    width: "100%",
+    borderRadius: 0,
   },
   userText: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "bold",
     color: "#ffffff",
+    borderWidth: 1,
+    borderColor: "#ffffff",
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    marginTop: 0, // Remove extra space above
   },
+  
   userButton: {
-    padding: 2,
+    padding: 0, // Remove any internal padding
+    marginRight: 140,
+    alignItems: "center",
+    justifyContent: "center",
   },
+  
   dropdownContainer: {
     position: "absolute",
     top: 70,
@@ -126,16 +134,25 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   },
   logoutButton: {
-    padding: 10,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 10,
-    marginTop: 5,
+    backgroundColor: "#f9f9f9",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#b68def", // light purple border
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   logoutText: {
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "#000000",
-    marginLeft: 10,
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#000",
+    textAlign: "center",
   },
   sosContainer: {
     alignItems: "center",
