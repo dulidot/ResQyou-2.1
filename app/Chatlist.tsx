@@ -1,7 +1,7 @@
-// app/index.js
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 const users = [
   { id: "1", name: "VAWC Support" },
@@ -12,13 +12,22 @@ const users = [
 const ChatList = () => {
   const router = useRouter();
 
-  const openChat = (user) => {
-    router.push({ pathname: "/chat", params: { userId: user.id, name: user.name } });
+  const openChat = (user: { id: string; name: string }) => {
+    router.push({ pathname: "/Chat", params: { userId: user.id, name: user.name } });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Chats</Text>
+      {/* Top Header */}
+      <View style={styles.header}>
+        {/* Back Button */}
+        <TouchableOpacity onPress={() => router.push("/Home")} style={styles.headerBack}>
+          <Ionicons name="arrow-back" size={24} color="#fff" />
+        </TouchableOpacity>
+        {/* Title in the Middle */}
+        <Text style={styles.headerTitle}>Chats</Text>
+      </View>
+
       <FlatList
         data={users}
         keyExtractor={(item) => item.id}
@@ -33,13 +42,31 @@ const ChatList = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff", padding: 10 },
-  header: { fontSize: 24, fontWeight: "bold", marginBottom: 20, textAlign: "center", color: "#673ab7" },
+  container: { flex: 1, backgroundColor: "#fff" },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#7e57c2",
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+  },
+  headerBack: {
+    padding: 4,
+  },
+  headerTitle: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+    flex: 1,
+  },
   chatCard: {
     padding: 15,
     borderRadius: 10,
     backgroundColor: "#f0e7ff",
-    marginBottom: 10,
+    marginTop: 10,
+    marginHorizontal: 10,
   },
   chatName: { fontSize: 18, fontWeight: "600", color: "#5a35b7" },
 });

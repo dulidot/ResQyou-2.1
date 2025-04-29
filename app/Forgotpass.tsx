@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
   },
   backButton: {
     padding: 10,
-    marginTop: 20,
   },
   formContainer: {
     width: '100%',
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
   textContainer: {
-    position: 'absolute',
+    marginBottom: 20,
   },
   title: {
     fontSize: 32,
@@ -78,8 +77,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   inputContainer: {
-    marginTop: 140,
-    position: 'absolute',
+    marginTop: 20,
+    marginRight: 95, // Adjusted margin for better spacing
+    paddingVertical: 10, // Added padding for better alignment
+    width: '80%', // Adjusted width of the input container
+    alignSelf: 'center', // Centers the input container horizontally
   },
   input: {
     backgroundColor: '#fff',
@@ -90,18 +92,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderColor: '#ddd',
     borderWidth: 1,
+    width: '100%', // Ensures the input takes full width of the container
   },
   button: {
     backgroundColor: '#8C00BF',
     paddingVertical: 15,
-    borderRadius: 10,
+    borderRadius: 8,
     alignItems: 'center',
     marginTop: 20,
+    width: '60%', // Adjusted width of the button
+   
   },
   buttonText: {
     color: '#fff',
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: 'bold',
   },
 });
 

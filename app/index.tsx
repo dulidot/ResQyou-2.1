@@ -97,13 +97,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#FFF",
         borderRadius: 10,
         padding: 15,
-        marginBottom: 15,
+        marginBottom: 5,
         width: "90%",
     },
     button: {
-        backgroundColor: "#8c01c0",
+        backgroundColor: "#8c01c0", // Updated button color
         padding: 10,
-        borderRadius: 15,
+        borderRadius: 8,
         alignItems: "center",
         width: "60%",
         marginTop: 30,

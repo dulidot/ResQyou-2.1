@@ -28,53 +28,53 @@ const Register = () => {
         <View style={styles.textContainer}>
           <Text style={styles.title}>Sign Up</Text>
           <Text style={styles.subtitle}>Create an account to  get started</Text>
-
         </View>
-       <View style={styles.inputContainer}>
-       <TextInput
-          style={styles.input}
-          value={fullname}
-          onChangeText={setFullname}
-          placeholder="Full Name"
-          placeholderTextColor="#aaa"
-        />
-        <TextInput
-          style={styles.input}
-          value={email}
-          onChangeText={setEmail}
-          placeholder="Email"
-          placeholderTextColor="#aaa"
-          keyboardType="email-address"
-        />
-        <TextInput
-          style={styles.input}
-          value={contactNumber}
-          onChangeText={setContactNumber}
-          placeholder="Contact Number"
-          placeholderTextColor="#aaa"
-          keyboardType="phone-pad"
-        />
-        <TextInput
-          style={styles.input}
-          value={username}
-          onChangeText={setUsername}
-          placeholder="Username"
-          placeholderTextColor="#aaa"
-        />
-        <TextInput
-          style={styles.input}
-          value={password}
-          onChangeText={setPassword}
-          placeholder="Password"
-          secureTextEntry
-          placeholderTextColor="#aaa"
-        />
-        <TouchableOpacity style={styles.button} onPress={handleRegister}>
-          <Text style={styles.buttonText}>Register</Text>
-        </TouchableOpacity>
-       </View>
-
         
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            value={fullname}
+            onChangeText={setFullname}
+            placeholder="Full Name"
+            placeholderTextColor="#aaa"
+          />
+          <TextInput
+            style={styles.input}
+            value={email}
+            onChangeText={setEmail}
+            placeholder="Email"
+            placeholderTextColor="#aaa"
+            keyboardType="email-address"
+          />
+          <TextInput
+            style={styles.input}
+            value={contactNumber}
+            onChangeText={setContactNumber}
+            placeholder="Contact Number"
+            placeholderTextColor="#aaa"
+            keyboardType="phone-pad"
+          />
+          <TextInput
+            style={styles.input}
+            value={username}
+            onChangeText={setUsername}
+            placeholder="Username"
+            placeholderTextColor="#aaa"
+          />
+          <TextInput
+            style={styles.input}
+            value={password}
+            onChangeText={setPassword}
+            placeholder="Password"
+            secureTextEntry
+            placeholderTextColor="#aaa"
+          />
+          {/* Register Button */}
+          <TouchableOpacity style={styles.button} onPress={handleRegister}>
+            <Text style={styles.buttonText}>Register</Text>
+          </TouchableOpacity>
+        </View>
+
       </View>
     </ScrollView>
   );
@@ -84,12 +84,11 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: '#f6f6f6',
-    paddingTop: 40,
     paddingHorizontal: 20,
   },
   backButton: {
     padding: 10,
-    marginTop: 20, // Add a little margin on top
+    marginTop: 20,
   },
   formContainer: {
     width: '100%',
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
   textContainer: {
-    position: 'absolute'
+    position: 'absolute',
   },
   title: {
     fontSize: 32,
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
     color: '#666',
     marginTop: 5,
   },
-  inputContainer:{
+  inputContainer: {
     marginTop: 120,
     position: 'absolute',
   },
@@ -118,7 +117,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     paddingVertical: 12,
-    paddingHorizontal: 15,
+    paddingHorizontal: 60,
     marginBottom: 15,
     fontSize: 16,
     borderColor: '#ddd',
@@ -126,15 +125,18 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#8C00BF',
-    paddingVertical: 15,
-    borderRadius: 10,
+    paddingVertical: 12, // Adjusted vertical padding for a smaller height
+    paddingHorizontal: 25, // Adjusted horizontal padding for the register button width
+    borderRadius: 8, // Slightly smaller border radius for the button
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 10,
+    width: '70%', // Adjusted width for the register button only
+   // Center the button horizontally
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: '700',
+    fontSize: 18, // Slightly smaller font size for the button text
+    fontWeight: "bold",
   },
 });
 
